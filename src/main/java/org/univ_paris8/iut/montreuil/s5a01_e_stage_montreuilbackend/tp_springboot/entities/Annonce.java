@@ -3,7 +3,6 @@ package org.univ_paris8.iut.montreuil.s5a01_e_stage_montreuilbackend.tp_springbo
 
 import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,7 +28,6 @@ public class Annonce {
     @Column(nullable = false)
     private LocalDateTime date;
 
-    // Constructeurs
     public Annonce() {
     }
 
