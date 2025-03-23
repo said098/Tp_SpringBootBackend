@@ -23,6 +23,7 @@ public class AnnonceController {
     // Créer une annonce
     @PostMapping
     public ResponseEntity<Annonce> createAnnonce(@RequestBody Annonce annonce) {
+        System.out.println("dans méthode createAnnonce");
         Annonce savedAnnonce = annonceService.saveAnnonce(annonce);
         return ResponseEntity.ok(savedAnnonce);
     }
@@ -39,6 +40,7 @@ public class AnnonceController {
     public ResponseEntity<Annonce> getAnnonceById(@PathVariable Long id) {
         return annonceService.getAnnonceById(id)
                 .map(ResponseEntity::ok)
+
                 .orElse(ResponseEntity.notFound().build());
     }
 
@@ -55,4 +57,5 @@ public class AnnonceController {
         annonceService.deleteAnnonce(id);
         return ResponseEntity.noContent().build();
     }
+
 }
