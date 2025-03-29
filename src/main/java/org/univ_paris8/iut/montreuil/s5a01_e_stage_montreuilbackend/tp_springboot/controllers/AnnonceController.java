@@ -23,7 +23,6 @@ public class AnnonceController {
     // Créer une annonce
     @PostMapping
     public ResponseEntity<Annonce> createAnnonce(@RequestBody Annonce annonce) {
-        System.out.println("dans méthode createAnnonce");
         Annonce savedAnnonce = annonceService.saveAnnonce(annonce);
         return ResponseEntity.ok(savedAnnonce);
     }
